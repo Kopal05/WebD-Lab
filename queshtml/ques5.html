@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Mapping Example</title>
+</head>
+<body>
+    <h1>Image Mapping Example</h1>
+    <img src="./images/react.png" width="200px" height="200px" alt="mapped image" usemap="#hotspot">
+    <map name="hotspot">
+        <area shape="rect" coords="0,0,100,100" alt="Hotspot 1" onclick="showInfo('info1')">
+        <area shape="rect" coords="100,0,200,100" alt="Hotspot 2" onclick="showInfo('info2')">
+        <area shape="rect" coords="0,100,100,200" alt="Hotspot 3" onclick="showInfo('info3')">
+    </map>
+
+    <div id="info1" style="display: none; border: 2px solid black; height: 200px;">
+        <h2>Information related to Hotspot 1</h2>
+        <p>This is the information related to hotspot 1</p>
+    </div>
+
+    <div id="info2" style="display: none; border: 2px solid red; height: 200px;">
+        <h2>Information related to Hotspot 2</h2>
+        <p>This is the information related to hotspot 2</p>
+    </div>
+
+    <div id="info3" style="display: none; border: 2px solid blue; height: 200px;">
+        <h2>Information related to Hotspot 3</h2>
+        <p>This is the information related to hotspot 3</p>
+    </div>
+
+    <script>
+        function showInfo(infoId) {
+            var info = document.getElementById(infoId);
+            if (info.style.display === 'none') {
+                info.style.display = 'block';
+            } 
+        }
+    </script>
+</body>
+</html>
