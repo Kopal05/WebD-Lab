@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:visited{
+            color: blueviolet;
+        }
+        a:active{
+            color:aquamarine
+        }
+        .item1{
+            grid-area: header;
+        }
+        .item2{
+            grid-area:menu;
+        }
+        .item3{
+            grid-area: main;
+            display: none;
+        }
+        .item4{
+            grid-area: right;
+            display:none
+        }
+        .item5{
+            grid-area: footer;
+        }
+       
+
+        /* Display item3 and item4 when their corresponding anchor tag is targeted */
+        #objective:target .item3, #objective:target .item4,
+        #personal:target .item3, #personal:target .item4,
+        #family:target .item3, #family:target .item4,
+        #education:target .item3, #education:target .item4,
+        #experience:target .item3, #experience:target .item4,
+        #achievements:target .item3, #achievements:target .item4,
+        #other:target .item3, #other:target .item4 {
+        display: block;
+        }
+
+        .grid-container { 
+        display: grid; 
+        grid-template-areas: 
+          "header header header header header header" 
+          "menu menu main main main right" 
+        "menu menu main main main right" 
+          "menu menu main main main right" 
+          "footer footer footer footer footer footer"; 
+        padding: 10px; 
+      } 
+ 
+      .grid-container > div { 
+        border: 1px solid black; 
+        text-align: center; 
+        padding: 20px 0; 
+      } 
+    </style>
+</head>
+<body> 
+    <h1>Grid Layout</h1> 
+
+    <div class="grid-container"> 
+        <div class="item1">Kopal Pareek</div> 
+        <div class="item2"> 
+            <a href="#objective" style="color: green">Objective</a><br /> 
+            <a href="#personal" style="color: green">Personal Information</a><br /> 
+            <a href="#family" style="color: green">Family Information</a><br /> 
+            <a href="#education" style="color: green">Educational Information</a><br /> 
+            <a href="#experience" style="color: green">Experience</a><br /> 
+            <a href="#achievements" style="color: green">Achievements</a><br /> 
+            <a href="#other" style="color: green">Other</a> 
+        </div> 
+        <div id="displayInfo" class="item3">Display information here</div> 
+        <div class="item4" id="imageContainer">relevant images</div> 
+        <div class="item5" id="contactInfo">Contact : 457834920847</div> 
+    </div> 
+
+    <!-- Display information and image in item3 and item4 -->
+    <div id="objective">
+        <div class="item3">
+            <p>This is the objective information to be displayed.</p>
+        </div>
+        <div class="item4">
+            <img src="path_to_objective_image.jpg" alt="Objective Image" style="width: 200px; height: 200px;">
+        </div>
+    </div>
+
+    <!-- Repeat the above structure for other sections -->
+</body> 
+</html>
