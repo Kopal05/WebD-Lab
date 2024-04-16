@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newspaper Layout</title>
+  <style>
+    .container {
+      width: 800px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .column {
+      float: left;
+      width: 33.33%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .article {
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #333;
+    }
+    p {
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="column">
+      <div class="article">
+        <h2>Article 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend velit et magna scelerisque, vitae blandit justo finibus.</p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="article">
+        <h2>Article 2</h2>
+        <p>Nulla facilisi. Vivamus at elit nec diam scelerisque fringilla nec in tellus. In hac habitasse platea dictumst.</p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="article">
+        <h2>Article 3</h2>
+        <p>Phasellus eget libero sed ipsum volutpat pretium vel at dui. Curabitur tincidunt risus eget ipsum vehicula, in mattis nulla vulputate.</p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="article">
+        <h2>Article 4</h2>
+        <p>Sed tincidunt interdum elit, eu tempor nulla bibendum vel. Duis auctor libero sit amet lorem blandit, ac venenatis tortor vehicula.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
