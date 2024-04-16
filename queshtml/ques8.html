@@ -3,67 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hotel customer Website</title>
     <style>
         form{
-            border: 2px solid green;
-            padding:10px;
-            background-color: aquamarine;
+            background-color: yellow;
+            border: 3px solid black;
         }
     </style>
 </head>
 <body>
-    <h1>Form</h1>
     <form>
         <fieldset>
-            <legend>Basic Information</legend>
-            <label for="name">Full Name
+            <legend>Customer Information Page</legend>
+            <label>Name:
                 <input type="text">
             </label><br><br>
-            <label>BirthDate
-                <input type="date">
-            </label>
-            <br>
-            <br>
-            <label>Gender
-               <input type="radio" id="Male" name="gender" value="Male">
-               <label>Male</label>
-               <input type="radio" id="female" name="gender" value="Female">
-               <label>Female</label>
-            </label>
-            <br><br>
-
             <label>Address
-              <input type="text">
-            </label>
-            <br><br>
-            <label>Phone No
                 <input type="text">
-              </label>
-        </fieldset>
-
-        <fieldset>
-            <legend>Extra Information</legend>
-            <label>Interests:
-                <input type="checkbox" id="books">
-                <label>Books</label>
-                <input type="checkbox" id="movies">
-                <label>Movies</label>
-                <input type="checkbox" id="Music">
-                <label>Music</label>
+            </label><br><br>
+            <label>Age
+                <input type="text">
+            </label><br><br>
+            <label>Gender
+                <input type="radio" id="Male" name="Gender" value="Male">
+                <label>Male</label>
+                <input type="radio" id="female" name="Gender" value="female">
+                <label>Female</label>
+            </label><br><br>
+            <label>Room type
+                <input type="radio" id="AC" name="Room type" value="AC">
+                <label>AC</label>
+                <input type="radio" id="Non-AC" name="Room type" value="Non-AC">
+                <label>Non-AC</label>
+                <input type="radio" id="Deluxe" name="Room type" value="Deluxe">
+                <label>Deluxe</label>
+            </label><br><br>
+            <label>Mode Of Payment
+                <input type="radio" id="Cash" name="Mode Of Payment" value="Cash">
+                <label>Cash</label>
+                <input type="radio" id="Card" name="Mode Of Payment" value="Card">
+                <label>Card</label>
+                <input type="radio" id="Online" name="Mode Of Payment" value="Online">
+                <label>Online</label>
             </label>
-            <br>
-            <br>
-            <label for="color">Favourite Color : </label> 
-            <input type="color" name="color" id="color" /> 
-            <br /> 
-            <br /> 
-          </fieldset> 
-     
-          <br /> 
-          <input type="submit" value="Send data" /> 
-          <input type="reset" value="Reset form" /> 
-        </form> 
+        </fieldset>
     </form>
 </body>
 </html>

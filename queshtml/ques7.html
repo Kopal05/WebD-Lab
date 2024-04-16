@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            border: 2px solid green;
+            padding:10px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form</h1>
+    <form>
+        <fieldset>
+            <legend>Basic Information</legend>
+            <label for="name">Full Name
+                <input type="text">
+            </label><br><br>
+            <label>BirthDate
+                <input type="date">
+            </label>
+            <br>
+            <br>
+            <label>Gender
+               <input type="radio" id="Male" name="gender" value="Male">
+               <label>Male</label>
+               <input type="radio" id="female" name="gender" value="Female">
+               <label>Female</label>
+            </label>
+            <br><br>
+
+            <label>Address
+              <input type="text">
+            </label>
+            <br><br>
+            <label>Phone No
+                <input type="text">
+              </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Extra Information</legend>
+            <label>Interests:
+                <input type="checkbox" id="books">
+                <label>Books</label>
+                <input type="checkbox" id="movies">
+                <label>Movies</label>
+                <input type="checkbox" id="Music">
+                <label>Music</label>
+            </label>
+            <br>
+            <br>
+            <label for="color">Favourite Color : </label> 
+            <input type="color" name="color" id="color" /> 
+            <br /> 
+            <br /> 
+          </fieldset> 
+     
+          <br /> 
+          <input type="submit" value="Send data" /> 
+          <input type="reset" value="Reset form" /> 
+        </form> 
+    </form>
+</body>
+</html>
