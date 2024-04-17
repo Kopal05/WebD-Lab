@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Personal Info</legend>
+            <label>Name
+                <input type="text" id="name">
+            </label><br><br>
+            <label>email
+                <input type="text" id="email">
+            </label><br><br>
+            <label>Password
+                <input type="text" id="pword">
+            </label>
+        </fieldset>
+    </form>
+
+    <script>
+        document.getElementById("name").addEventListener("keydown", function(event) {
+           if(event.key === "Enter") {
+            checkName();
+           }
+        });
+        function checkName(){
+            var pname = document.getElementById("name").value.trim();
+            if(/^[a-zA-Z\s]{2,30}$/.test(pname)){ // Modified regular expression
+                alert("Valid name!");
+            }
+            else{
+                alert("Not a valid name");
+            }
+        }
+
+
+        document.getElementById("email").addEventListener("keydown", function(event) {
+           if(event.key === "Enter") {
+            checkemail();
+           }
+        });
+        function checkemail(){
+            var emailname=document.getElementById("email").value.trim();
+            if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/.test(emailname)){
+                alert("valid email");
+            }
+            else{
+                alert("inavlid email");
+            }   
+        }
+
+        document.getElementById("pword").addEventListener("keydown",function(event){
+            if(event.key=== "Enter"){
+                checkpass();
+            }
+        })
+        function checkpass(){
+            var pass=document.getElementById("pword");
+            if(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])\S{8,20}$/)
+             {
+                alert("valid password");
+            }
+            else{
+                alert("Not a valid password");
+            }
+        }
+        
+
+
+    </script>
+
+</body>
+</html>

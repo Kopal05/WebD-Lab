@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Card details</legend>
+            <label>Master Card
+                <input type="text" id="mcardNumber">
+            </label><br><br>
+            <label>Visa
+                <input type="text" id="vNumber">
+            </label><br><br>
+            <label>American express
+                <input type="text" id="AENumber">
+            </label>
+        </fieldset>
+    </form>
+
+    <script>
+        document.getElementById("mcardNumber").addEventListener("keydown", function(event) {
+          if (event.key === "Enter") {
+            checkMasterCard();
+          }
+        });
+    
+        function checkMasterCard() {
+          var cardNumber = document.getElementById("mcardNumber").value.trim();
+    
+          // Check if the card number starts with 51-55 and has a length of 16
+          if (/^5[1-5]\d{14}$/.test(cardNumber)) {
+            alert("Valid MasterCard");
+          } else {
+            alert("Not a valid MasterCard");
+          }
+        }
+        document.getElementById("vNumber").addEventListener("keydown", function(event) {
+          if (event.key === "Enter") {
+            checkVisa();
+          }
+        });
+    
+        function checkVisa() {
+          var cardNumber = document.getElementById("vNumber").value.trim();
+    
+          // Check if the card number starts with 51-55 and has a length of 16
+          if (/^4\d{15}$/.test(cardNumber)) {
+            alert("Valid Visa");
+          } else {
+            alert("Not a valid Visa");
+          }
+        }
+        document.getElementById("AENumber").addEventListener("keydown", function(event) {
+          if (event.key === "Enter") {
+            checkAE();
+          }
+        });
+    
+        function checkAE() {
+          var cardNumber = document.getElementById("AENumber").value.trim();
+    
+          // Check if the card number starts with 34 or 37 and has a length of 15
+          if (/^(34|37)\d{13}$/.test(cardNumber)) {
+            alert("Valid American Express card");
+          } else {
+            alert("Not a valid American Express card");
+          }
+        }
+      </script>
+</body>
+</html>
