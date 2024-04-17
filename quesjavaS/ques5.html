@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>I am counter</h1>
+    <h2 id="counterBtn">Count is : 200</h2>
+
+    <script>
+        const counter = document.getElementById("counterBtn");
+
+        let count = 0;
+
+        const bodyElem = document.getElementsByTagName("body")[0];
+        const arr = ["red", "green", "blue"];
+
+        const change = () => {
+            counter.innerText = count;
+            count++;
+            counter.innerText = `Count is : ${count}`;
+
+            bodyElem.style.backgroundColor = arr[count % 3];
+        };
+
+        const intervalId = setInterval(() => {
+            change();
+        }, 100);
+
+        setTimeout(() => {
+            clearInterval(intervalId);
+        }, 20000);
+    </script>
+</body>
+</html>

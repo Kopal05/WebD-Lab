@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Country Quiz</h1>
+    <label for="country">Select the country: </label>
+    <select id="countries">
+        <option value="India">India</option>
+        <option value="Pakistan">Pakistan</option>
+        <option value="Bangladesh">Bangladesh</option>
+        <option value="China">China</option>
+        <option value="Thailand">Thailand</option>
+    </select><br><br>
+    <label for="capitals">Select Capital of the above selected country: </label>
+    <select id="capitals">
+        <option value="New Delhi">New Delhi</option>
+        <option value="Islamabaad">Islamabaad</option>
+        <Option value="Dhaka">Dhaka</Option>
+        <option value="Beijing">Beijing</option>
+        <option value="Bangkok">Bangkok</option>
+    </select><br><br>
+    <button id="btn">Check answer</button>
+
+    <script>
+        const countrycapitals= {
+              India:"New Delhi",
+              Pakistan:"Islamabaad",
+              Bangladesh:"Dhaka",
+              China:"Beijing",
+              Thailand:"Bangkok"
+        };
+
+        const checkanswer = () => {
+              const icountry=document.getElementById("countries").value;
+              const icapital=document.getElementById("capitals").value;
+
+              const correctcapi=countrycapitals[icountry];
+
+              if(correctcapi === icapital){
+                alert("Wooooooo Hooooooo!! You know the correct answer");
+              }
+              else{
+                alert(`Ufff Fooo!! You need to work correct answer is--> ${icountry}'s capital is ${correctcapi}`);
+              }
+        };
+        const check=document.getElementById("btn");
+        check.addEventListener("click",checkanswer);
+
+
+    </script>
+</body>
+</html>

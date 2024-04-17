@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maruti Survey</title>
+    <style>
+        /* CSS for styling */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        #totals {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Maruti Survey</h1>
+    <table>
+        <tr>
+            <th>City</th>
+            <th>Maruti-K10</th>
+            <th>Zen-Astelo</th>
+            <th>Wagnor</th>
+            <th>Maruti-SX4</th>
+        </tr>
+        <tr>
+            <td>Delhi</td>
+            <td><input type="number" id="delhi-k10" value="0"></td>
+            <td><input type="number" id="delhi-zen" value="0"></td>
+            <td><input type="number" id="delhi-wagnor" value="0"></td>
+            <td><input type="number" id="delhi-sx4" value="0"></td>
+        </tr>
+        <tr>
+            <td>Mumbai</td>
+            <td><input type="number" id="mumbai-k10" value="0"></td>
+            <td><input type="number" id="mumbai-zen" value="0"></td>
+            <td><input type="number" id="mumbai-wagnor" value="0"></td>
+            <td><input type="number" id="mumbai-sx4" value="0"></td>
+        </tr>
+        <tr>
+            <td>Chennai</td>
+            <td><input type="number" id="chennai-k10" value="0"></td>
+            <td><input type="number" id="chennai-zen" value="0"></td>
+            <td><input type="number" id="chennai-wagnor" value="0"></td>
+            <td><input type="number" id="chennai-sx4" value="0"></td>
+        </tr>
+        <tr>
+            <td>Kolkata</td>
+            <td><input type="number" id="kolkata-k10" value="0"></td>
+            <td><input type="number" id="kolkata-zen" value="0"></td>
+            <td><input type="number" id="kolkata-wagnor" value="0"></td>
+            <td><input type="number" id="kolkata-sx4" value="0"></td>
+        </tr>
+    </table>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="totals"></div>
+
+    <script>
+        // JavaScript function to calculate totals and display them
+        function calculate() {
+            const cities = ['delhi', 'mumbai', 'chennai', 'kolkata'];
+            const models = ['k10', 'zen', 'wagnor', 'sx4'];
+            let totalsHTML = '<h2>Totals</h2><table><tr><th>City</th><th>Total</th></tr>';
+            
+            cities.forEach(city => {
+                let total = 0;
+                models.forEach(model => {
+                    const input = document.getElementById(city + '-' + model);
+                    total += parseInt(input.value);
+                });
+                totalsHTML += '<tr><td>' + city + '</td><td>' + total + '</td></tr>';
+            });
+
+            totalsHTML += '</table>';
+            document.getElementById('totals').innerHTML = totalsHTML;
+        }
+    </script>
+</body>
+</html>

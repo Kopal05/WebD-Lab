@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Telephone Number Extraction</h2>
+
+    <fieldset>
+        <legend>Telephone</legend>
+        <label for="phoneNumber">Enter Telephone Number (Format: (555)555-5555):</label>
+        <input type="text" id="phoneNumber" placeholder="(555)555-5555">
+
+        <br><br>
+
+        <label for="areaCode">Area Code:</label>
+        <input type="text" id="areaCode" readonly="">
+
+        <br><br>
+
+        <label for="phoneNumberPart">Phone Number:</label>
+        <input type="text" id="phoneNumberPart" readonly="">
+
+        <br><br>
+
+        <button onclick="extractNumber()">Extract</button>
+    </fieldset>
+
+    <script>
+        function extractNumber() {
+            let phoneNumber = document.getElementById("phoneNumber").value;
+
+            // Extract area code and last four digits
+            let extractedParts = phoneNumber.match(/\d+/g);
+
+            if (extractedParts.length === 3) {
+                let areaCode = extractedParts[0];
+                let phoneNumberPart = extractedParts[1] + extractedParts[2];
+
+                // Display extracted parts
+                document.getElementById("areaCode").value = areaCode;
+                document.getElementById("phoneNumberPart").value = phoneNumberPart;
+            } else {
+                alert("Invalid phone number format. Please enter in the format: (555)555-5555");
+            }
+        }
+    </script>
+
+
+</body>
+</html>

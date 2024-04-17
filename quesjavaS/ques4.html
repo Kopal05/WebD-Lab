@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculate!</h1>
+    <label>Enter Operand 1st:
+        <input type="text" id="1o">
+    </label>
+    <label>Enter Operand 2nd:
+        <input type="text" id="2o">
+    </label><br><br>
+    <label>Enter operation you want to perform:
+        <select id="ope">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+    </label>
+    <button id="cbtn">Calculate</button>
+    <button id="rbtn">Reset</button>
+    <br><br><br><br>
+    <p id="result">Result is: </p>
+    
+    <script>
+       
+       const calculate = () => {
+                let op1 = parseFloat(document.getElementById("1o").value);
+                let op2 = parseFloat(document.getElementById("2o").value);
+
+                let operator = document.getElementById("ope").value;
+
+                let resultElement = document.getElementById("result");
+
+                let answer;
+
+                switch (operator) {
+                    case "+":
+                        answer = op1 + op2;
+                        break;
+                    case "-":
+                        answer = op1 - op2;
+                        break;
+                    case "*":
+                        answer = op1 * op2;
+                        break;
+                    case "/":
+                        if (op2 !== 0) {
+                            answer = op1 / op2;
+                        } else {
+                            answer = "Cannot divide by zero";
+                        }
+                        break;
+                    default:
+                        answer = "invalid";
+                }
+
+                resultElement.innerHTML = "Result is :" + answer;
+            };
+
+            document.getElementById("cbtn").addEventListener("click", calculate);
+
+            document.getElementById("rbtn").addEventListener("click", () => {
+                let resultElement = document.getElementById("result");
+                resultElement.textContent = "Result is :";
+            });
+        
+    </script>
+    
+</body>
+</html>
